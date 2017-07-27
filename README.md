@@ -2,7 +2,7 @@
 
 Team:
 
-Leonardo Gutierrez
-Gerardo Figueroa
-Lucas Suarez
+Leonardo Gutierrez <br/>
+Gerardo Figueroa <br/>
+Lucas Suarez <br/>
 Cristian Burgos
