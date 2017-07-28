@@ -1,16 +1,14 @@
 'use strict';
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const port = process.env.PORT || 3000;
 
+const mongoose = require('mongoose'),
+	  app = require('./app'),
+	  config = require('./config');
 
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
-app.get('/all/:latitud/:longitud',(req,res)=>{
-    res.send({message:'descripcion'})
-});
-
-app.listen(port,()=>{
-    console.log(`api rest corriendo en http://localhost:${port}`)
-});
+mongoose.connect(config.db, (error, response) => {
+	if(error)
+		return console.log('Error al conectar con la base de datos ' + error)
+	console.log('Conexion a la base de datos establecida...')
+	app.listen(config.port, () => {
+		console.log('API REST corriendo en http://localhost:' + config.port)
+	})
+})
