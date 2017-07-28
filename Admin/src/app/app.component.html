@@ -1,0 +1,27 @@
+<app-navbar> </app-navbar>
+
+<div class="container main-container">
+  <div class="row">
+        <div class="col-md-4">
+            <h3>Marcador</h3>
+        </div>
+        <div class="col-md-8">
+          <sebm-google-map 
+              [latitude]="lat" 
+              [longitude]="lng"
+              [zoom]="zoom"
+              (mapClick)="clickMapa($event)">
+            <sebm-google-map-marker 
+                [latitude]="lat" 
+                [longitude]="lng">
+                <sebm-google-map-info-window>
+                  <strong>Titulo</strong>
+                  <p>punto incial</p>
+                </sebm-google-map-info-window>
+            </sebm-google-map-marker>
+          </sebm-google-map>
+        </div>
+  </div>
+</div>
+
+
